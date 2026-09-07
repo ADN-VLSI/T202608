@@ -1,4 +1,4 @@
-module ifelse(
+module ifelse_tb(
     input  logic [6:0] marks,
     output logic [1:0] grade
 );
