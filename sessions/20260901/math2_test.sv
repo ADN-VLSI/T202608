@@ -2,8 +2,8 @@ module math2_test;
 
   initial begin
 
-    int a = 5;
-    int b = 0;
+    automatic int a = 5;
+    automatic int b = 0;
 
     b = a++;
 

@@ -41,3 +41,8 @@ clean:
 clean_full:
 	@make -s clean
 	@rm -rf $(LOG_DIR)
+
+.PHONY: fs
+fs:
+	@make -s clean
+	@make -s simulate TOP=$(TOP)
