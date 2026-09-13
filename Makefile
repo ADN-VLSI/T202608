@@ -9,8 +9,8 @@ LOG_DIR := $(REPO_ROOT)/log
 
 XVLOG_CMD += -sv
 XVLOG_CMD += -i $(REPO_ROOT)/include
-XVLOG_CMD += $(shell find $(REPO_ROOT)/source -name "*.sv")
 XVLOG_CMD += $(shell find $(REPO_ROOT)/interface -name "*.sv")
+XVLOG_CMD += $(shell find $(REPO_ROOT)/source -name "*.sv")
 XVLOG_CMD += $(shell find $(REPO_ROOT)/testbench -name "*.sv")
 
 XVLOG ?= xvlog
