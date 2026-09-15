@@ -16,12 +16,12 @@ module fifo #(
     output logic [SIZE:0] count_o
 );
 
-  logic [DATA_WIDTH-1:0] mem    [2**SIZE];
-  logic [        SIZE:0] wr_ptr;
-  logic [        SIZE:0] rd_ptr;
+  logic [2**SIZE-1:0][DATA_WIDTH-1:0] mem;
+  logic [     SIZE:0]                 wr_ptr;
+  logic [     SIZE:0]                 rd_ptr;
 
-  logic                  push;
-  logic                  pop;
+  logic                               push;
+  logic                               pop;
 
   always_comb data_in_ready_o = arst_ni ? ((count_o < (2 ** SIZE)) ? 'b1 : data_out_ready_i) : '0;
   always_comb data_out_valid_o = (count_o > 0);
