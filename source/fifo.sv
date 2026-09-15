@@ -29,7 +29,7 @@ module fifo #(
   always_comb push = data_in_valid_i && data_in_ready_o;
   always_comb pop = data_out_valid_o && data_out_ready_i;
 
-  always_comb data_out_o = mem[rd_ptr];
+  always_comb data_out_o = mem[rd_ptr[SIZE-1:0]];
   always_comb count_o = wr_ptr - rd_ptr;
 
   always_ff @(posedge clk_i or negedge arst_ni) begin

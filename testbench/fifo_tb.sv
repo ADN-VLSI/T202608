@@ -4,7 +4,7 @@ module fifo_tb;
   // LOCAL PARAMETERS
   //////////////////////////////////////////////////////////////////////////////////////////////////
 
-  localparam int SZ = 3;
+  localparam int SZ = 2;
   localparam int DW = 16;
 
   //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -78,10 +78,19 @@ module fifo_tb;
     $dumpfile("fifo_tb.vcd");
     $dumpvars(0, fifo_tb);
 
-    ctrl_intf.apply_reset();
+    apply_reset();
     ctrl_intf.start_clock();
 
     data_in.send('h1234);
+    data_in.send('h5678);
+    data_in.send('h90AB);
+    data_in.send('hCDEF);
+
+    repeat (5) @(posedge ctrl_intf.clk);
+
+    data_out.recv(rdata);
+    data_out.recv(rdata);
+    data_out.recv(rdata);
     data_out.recv(rdata);
 
     #100ns;

@@ -1,0 +1,51 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Tue Sep 15 06:24:42 2026
+[*]
+[dumpfile] "C:\Users\foeza\Documents\T202608\build\fifo_tb.vcd"
+[dumpfile_mtime] "Tue Sep 15 06:21:11 2026"
+[dumpfile_size] 5022
+[savefile] "C:\Users\foeza\Documents\T202608\wave.gtkw"
+[timestart] 0
+[size] 1536 793
+[pos] -87 -87
+*-17.358105 525000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] fifo_tb.
+[sst_width] 197
+[signals_width] 126
+[sst_expanded] 1
+[sst_vpaned_height] 221
+@24
+[color] 3
+fifo_tb.count_o[2:0]
+@28
+[color] 3
+fifo_tb.data_in.arst_ni
+fifo_tb.data_in.clk_i
+@22
+[color] 2
+fifo_tb.data_in.data[15:0]
+@28
+[color] 2
+fifo_tb.data_in.valid
+@29
+[color] 4
+fifo_tb.data_in.ready
+@200
+-
+@28
+[color] 3
+fifo_tb.data_out.arst_ni
+[color] 3
+fifo_tb.data_out.clk_i
+@23
+[color] 4
+fifo_tb.data_out.data[15:0]
+@29
+[color] 4
+fifo_tb.data_out.valid
+@28
+[color] 2
+fifo_tb.data_out.ready
+[pattern_trace] 1
+[pattern_trace] 0
