@@ -13,6 +13,8 @@ XVLOG_CMD += $(shell find $(REPO_ROOT)/interface -name "*.sv")
 XVLOG_CMD += $(shell find $(REPO_ROOT)/source -name "*.sv")
 XVLOG_CMD += $(shell find $(REPO_ROOT)/testbench -name "*.sv")
 
+EW_HL = | sed "s/.*XSIM 43-4468.*//g" | grep -iE "error:|warning:|" --color=auto
+
 XVLOG ?= xvlog
 XELAB ?= xelab
 XSIM  ?= xsim
@@ -31,7 +33,7 @@ $(BUILD_DIR)/snap_$(TOP):
 simulate:
 	@make -s $(LOG_DIR)
 	@make -s $(BUILD_DIR)/snap_$(TOP)
-	@cd $(BUILD_DIR) && $(XSIM) snap_$(TOP) -runall -log $(LOG_DIR)/xsim_$(TOP)_$(shell date +%Y%m%d_%H%M%S).log
+	@cd $(BUILD_DIR) && $(XSIM) snap_$(TOP) -runall -log $(LOG_DIR)/xsim_$(TOP)_$(shell date +%Y%m%d_%H%M%S).log $(EW_HL)
 
 .PHONY: clean
 clean:
