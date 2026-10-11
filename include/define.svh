@@ -1,0 +1,7 @@
+`define MAX(a,b) ((a) > (b) ? (a) : (b))
+`define MIN(a,b) ((a) < (b) ? (a) : (b))
+`define ABS(x) ((x) < 0 ? -(x) : (x))
+`define CLAMP(x,min,max) (`MAX(`MIN(x,max),min))
+`define ARRAY_SIZE(arr) ($size(arr))
+`define LOG2(x) ($clog2(x))
+`define IS_POWER_OF_2(x) ((x) != 0 && ((x) & ((x)-1)) == 0)
